@@ -5,11 +5,16 @@ import java.util.Scanner;
 class ChooseShape {
 
     void input() {
-        Scanner scanner = new Scanner(System.in);
+
         while (true) {
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Choose shape:\n1 for square\n2 for quadrilateral\n3 for circle\n4 for trapezoid\n5 for triangle" +
                     "\n0 for exit");
-            int i = scanner.nextInt();
+            int i = -1;
+            try {
+                i = scanner.nextInt();
+            } catch (Exception ignored) {
+            }
             if (i == 0) break;
             switch (i) {
                 case 1:
@@ -41,6 +46,9 @@ class ChooseShape {
                     triangle.getParameter();
                     triangle.getArea();
                     triangle.getPerimeter();
+                    break;
+                default:
+                    System.out.println("Wrong input!");
                     break;
             }
         }

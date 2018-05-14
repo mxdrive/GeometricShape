@@ -3,10 +3,10 @@ package com.company;
 import java.util.Scanner;
 
 class Square extends Shapes {
-    private Scanner scanner = new Scanner(System.in);
     private int side;
 
     void getParameter() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Set square side length");
         side = scanner.nextInt();
     }

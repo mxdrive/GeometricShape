@@ -3,11 +3,11 @@ package com.company;
 import java.util.Scanner;
 
 class Quadrilateral extends Shapes {
-    private Scanner scanner = new Scanner(System.in);
     private int sideOne;
     private int sideTwo;
 
     void getParameter() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Set first quadrilateral side length");
         sideOne = scanner.nextInt();
         System.out.println("Set second quadrilateral side length");
