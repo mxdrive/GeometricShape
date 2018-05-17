@@ -7,7 +7,7 @@ class Trapezoid extends Shapes {
     private int baseTwo;
     private int sideOne;
     private int sideTwo;
-    private int heigh;
+    private int height;
 
     void getParameter() {
         Scanner scanner = new Scanner(System.in);
@@ -20,11 +20,11 @@ class Trapezoid extends Shapes {
         System.out.println("Set side two");
         sideTwo = scanner.nextInt();
         System.out.println("Set height");
-        heigh = scanner.nextInt();
+        height = scanner.nextInt();
     }
 
     void getArea() {
-        System.out.println("Trapezoid area is: " + ((baseOne + baseTwo)/2 + heigh));
+        System.out.println("Trapezoid area is: " + ((baseOne + baseTwo)/2 + height));
     }
 
     void getPerimeter() {

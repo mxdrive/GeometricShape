@@ -5,8 +5,9 @@ import java.util.Scanner;
 class ChooseShape {
 
     void input() {
+        boolean ifContinue = true;
 
-        while (true) {
+        while (ifContinue) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Choose shape:\n1 for square\n2 for quadrilateral\n3 for circle\n4 for trapezoid\n5 for triangle" +
                     "\n0 for exit");
@@ -15,42 +16,37 @@ class ChooseShape {
                 i = scanner.nextInt();
             } catch (Exception ignored) {
             }
-            if (i == 0) break;
+
+            Shapes shapes = null;
             switch (i) {
+                case 0:
+                    ifContinue = false;
+                    break;
                 case 1:
-                    Square square = new Square();
-                    square.getParameter();
-                    square.getArea();
-                    square.getPerimeter();
+                    shapes = new Square();
                     break;
                 case 2:
-                    Quadrilateral quadrilateral = new Quadrilateral();
-                    quadrilateral.getParameter();
-                    quadrilateral.getArea();
-                    quadrilateral.getPerimeter();
+                    shapes = new Quadrilateral();
                     break;
                 case 3:
-                    Circle circle = new Circle();
-                    circle.getParameter();
-                    circle.getArea();
-                    circle.getPerimeter();
+                    shapes = new Circle();
                     break;
                 case 4:
-                    Trapezoid trapezoid = new Trapezoid();
-                    trapezoid.getParameter();
-                    trapezoid.getArea();
-                    trapezoid.getPerimeter();
+                    shapes = new Trapezoid();
                     break;
                 case 5:
-                    Triangle triangle = new Triangle();
-                    triangle.getParameter();
-                    triangle.getArea();
-                    triangle.getPerimeter();
+                    shapes = new Triangle();
                     break;
                 default:
                     System.out.println("Wrong input!");
                     break;
             }
+            if (shapes != null) {
+                shapes.getParameter();
+                shapes.getArea();
+                shapes.getPerimeter();
+            }
+
         }
         System.out.println("Quantity of created objects: " + Shapes.getCounter());
     }
